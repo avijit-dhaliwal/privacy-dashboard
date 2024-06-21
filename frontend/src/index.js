@@ -3,11 +3,10 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 
-const basename = process.env.PUBLIC_URL;
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter basename={basename}>
+    <BrowserRouter basename="/privacy-dashboard">
       <App />
     </BrowserRouter>
   </React.StrictMode>,
