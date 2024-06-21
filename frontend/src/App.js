@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
@@ -17,28 +17,7 @@ import DataUsage from './components/DataUsage';
 import { isAuthenticated } from './utils/auth';
 
 const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#1976d2',
-    },
-    secondary: {
-      main: '#dc004e',
-    },
-  },
-  typography: {
-    fontFamily: [
-      '-apple-system',
-      'BlinkMacSystemFont',
-      '"Segoe UI"',
-      'Roboto',
-      '"Helvetica Neue"',
-      'Arial',
-      'sans-serif',
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(','),
-  },
+  // ... (keep your existing theme configuration)
 });
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
@@ -59,18 +38,16 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <ErrorBoundary>
-        <Router>
-          <Switch>
-            <Route exact path="/" component={HomePage} />
-            <PrivateRoute path="/dashboard" component={DashboardPage} />
-            <PrivateRoute path="/settings" component={SettingsPage} />
-            <PrivateRoute path="/privacy-policy/:appId" component={PrivacyPolicy} />
-            <PrivateRoute path="/data-usage/:appId" component={DataUsage} />
-            <Route path="*">
-              <Redirect to="/" />
-            </Route>
-          </Switch>
-        </Router>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <PrivateRoute path="/dashboard" component={DashboardPage} />
+          <PrivateRoute path="/settings" component={SettingsPage} />
+          <PrivateRoute path="/privacy-policy/:appId" component={PrivacyPolicy} />
+          <PrivateRoute path="/data-usage/:appId" component={DataUsage} />
+          <Route path="*">
+            <Redirect to="/" />
+          </Route>
+        </Switch>
       </ErrorBoundary>
     </ThemeProvider>
   );

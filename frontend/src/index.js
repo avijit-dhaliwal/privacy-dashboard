@@ -1,10 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
+
+const basename = process.env.PUBLIC_URL;
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter basename={basename}>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
