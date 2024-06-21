@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/privacy-dashboard/frontend/static/js/main.d63a74b7.js",
+    "index.html": "/privacy-dashboard/frontend/index.html",
+    "main.d63a74b7.js.map": "/privacy-dashboard/frontend/static/js/main.d63a74b7.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.d63a74b7.js"
+  ]
+}
