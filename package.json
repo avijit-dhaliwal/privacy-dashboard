@@ -1,0 +1,17 @@
+{
+  "name": "privacy-dashboard",
+  "version": "1.0.0",
+  "description": "Privacy Dashboard full-stack application",
+  "scripts": {
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm start",
+    "dev": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^6.2.1"
+  }
+}
